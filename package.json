@@ -1,0 +1,22 @@
+{
+  "name": "dnd-application-form",
+  "version": "1.0.0",
+  "description": "Приложение для подачи заявок на участие в DnD игре",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "NODE_ENV=development node server.js"
+  },
+  "keywords": [
+    "dnd",
+    "dungeons-and-dragons",
+    "applications",
+    "forms"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.21.2",
+    "sqlite3": "^5.1.7"
+  }
+}

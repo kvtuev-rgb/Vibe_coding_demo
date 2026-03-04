@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Заявка на участие в DnD</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <h1>Набор в DnD кампанию</h1>
+        <p>Заполни заявку, и мастер свяжется с тобой.</p>
+      </header>
+
+      <main class="layout">
+        <section class="card card-main">
+          <h2>Форма заявки</h2>
+          <form id="application-form" class="form">
+            <div class="field">
+              <label for="playerName">Имя / ник</label>
+              <input
+                id="playerName"
+                name="playerName"
+                type="text"
+                placeholder="Как к тебе обращаться?"
+                required
+              />
+            </div>
+
+            <div class="field">
+              <label for="contact">Контакты</label>
+              <input
+                id="contact"
+                name="contact"
+                type="text"
+                placeholder="@telegram, Discord, телефон, и т.п."
+                required
+              />
+            </div>
+
+            <div class="field">
+              <label for="experienceLevel">Опыт в DnD / настолках</label>
+              <select id="experienceLevel" name="experienceLevel">
+                <option value="newbie">Никогда не играл(а)</option>
+                <option value="some">Играл(а) пару раз</option>
+                <option value="regular">Регулярно играю</option>
+                <option value="veteran">Много лет за столом</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="characterIdea">Идея персонажа (по желанию)</label>
+              <textarea
+                id="characterIdea"
+                name="characterIdea"
+                rows="3"
+                placeholder="Класс, раса, пара слов о характере..."
+              ></textarea>
+            </div>
+
+            <div class="field">
+              <label for="preferredTime">Удобное время игры</label>
+              <input
+                id="preferredTime"
+                name="preferredTime"
+                type="text"
+                placeholder="Например: будни после 19:00, суббота днём"
+                required
+              />
+            </div>
+
+            <div class="field">
+              <span class="label">Интересующие системы (по желанию)</span>
+              <div class="chips" id="systems">
+                <label class="chip">
+                  <input type="checkbox" value="DnD 5e" />
+                  <span>DnD 5e</span>
+                </label>
+                <label class="chip">
+                  <input type="checkbox" value="Pathfinder" />
+                  <span>Pathfinder</span>
+                </label>
+                <label class="chip">
+                  <input type="checkbox" value="OSR" />
+                  <span>OSR</span>
+                </label>
+                <label class="chip">
+                  <input type="checkbox" value="Другое" />
+                  <span>Другое</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="comments">Комментарий мастеру</label>
+              <textarea
+                id="comments"
+                name="comments"
+                rows="3"
+                placeholder="Ожидания от кампании, ограничения, предпочтения по сеттингу..."
+              ></textarea>
+            </div>
+
+            <button type="submit" class="button primary">
+              Отправить заявку
+            </button>
+            <p id="form-status" class="status"></p>
+          </form>
+        </section>
+
+        <section class="card card-side">
+          <div class="card-header">
+            <h2>Заявки игроков</h2>
+            <button id="toggle-list" class="button ghost small">
+              Показать
+            </button>
+          </div>
+          <p class="hint">
+            Этот блок удобен мастеру. Здесь отображаются все отправленные
+            заявки.
+          </p>
+          <div id="applications-list" class="applications-list hidden"></div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>Сделано для удобного набора в кампанию DnD</span>
+      </footer>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
+
